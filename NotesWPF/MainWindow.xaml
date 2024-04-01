@@ -1,0 +1,37 @@
+﻿<Window x:Class="NotesWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotesWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="319*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="21" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFA5A4A4">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать" Click="CreateButton_Click"></MenuItem>
+                <MenuItem Header="Открыть" Click="OpenButton_Click"></MenuItem>
+                <MenuItem Header="Сохранить " Click="SaveButton_Click"></MenuItem>
+                <MenuItem Header="Сохранить как" Click="SaveAsButton_Click"></MenuItem>
+                <Separator />
+                <MenuItem Header="Выход" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Редактировать" ></MenuItem>
+            <MenuItem Header="Просмотр" Height="22" Width="69">
+                <MenuItem Header="Шрифт" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <RichTextBox x:Name="RichTextBox" Margin="0,21,0,0" Grid.ColumnSpan="2" Opacity="0.995" TextChanged="isFileSaved">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
